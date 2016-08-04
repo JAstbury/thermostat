@@ -28,3 +28,19 @@ Thermostat.prototype.powerSaveOff = function() {
 Thermostat.prototype.powerSaveOn = function() {
   this.powerSave = true;
 }
+
+Thermostat.prototype.reset = function() {
+  this.temperature = 20
+}
+
+Thermostat.prototype.energy  = function() {
+  if (this.temperature <= 18){
+    return "Green"
+  }
+  else if (this.temperature > 18 && this.temperature < 25 ) {
+    return "Yellow"
+  }
+  else if (this. temperature >= 25) {
+    return "Red"
+  }
+};
