@@ -1,11 +1,14 @@
 Javascript Thermostat
 =================
 
-This week, we got to grips with Javascript and built the logic needed to model a simple thermostat.
+This week, we got to grips with Javascript and built the logic needed to model a simple thermostat. Jasmine was used to Test-Drive Development and jQuery was used to allow users to interact with the thermostat. We also incorporated the OpenWeatherMap API to pull in temperatures from cities around the world.
 
-Jasmine was used to Test-Drive Development and jQuery was used to allow users to interact with the thermostat.
+Screenshots
+-----
 
-We also incorporated the OpenWeatherMap API to pull in temperatures from cities around the world.
+![Screenshot](
+http://i.imgur.com/iu1v5dhm.png
+)
 
 Specifications
 -----
@@ -19,10 +22,3 @@ Specifications
 - Power saving mode is on by default
 - You can reset the temperature to 20 by hitting the reset button
 - The thermostat should colour the display based on energy usage - < 18 is green, < 25 is yellow, otherwise red
-
-Screenshots
------
-
-![Screenshot](
-http://i.imgur.com/iu1v5dhm.png
-)
