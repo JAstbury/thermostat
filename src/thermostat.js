@@ -1,61 +1,46 @@
-
-function Thermostat(){
+Thermostat = function (){
   this.temperature = 20;
+  this._MINTEMP = 10;
   this.powerSave = true;
-  this.MAX_LIMIT_PS = 25;
-  this.MAX_LIMIT_PSOFF = 32;
-  this.MEDIUM_USAGE = 18;
-  this.usage = 'medium-usage';
 };
 
-Thermostat.prototype.upButton = function(){
-  if (this.maxTemperature()) {
-    throw new Error('temp too high')
-  };
-  this.temperature += 1
-  };
-
-Thermostat.prototype.downButton = function(){
-  if (this.temperature <= 10) {
-    throw new Error('temp too low')
-  };
-  this.temperature -= 1
+Thermostat.prototype.up = function () {
+  if (this.powerSave === true && this.temperature >= 25) {
+    throw new Error('maximum temperature reached');
+  }
+  else if (this.powerSave === false && this.temperature >= 32) {
+    throw new Error('maximum temperature reached');
+  }
+  this.temperature++;
 };
 
-Thermostat.prototype.powerSaveOff = function(){
-  this.powerSave = false
-};
-Thermostat.prototype.powerSaveOn = function(){
-  this.powerSave = true
+Thermostat.prototype.down = function () {
+  if (this.temperature <= this._MINTEMP) {
+    throw new Error('minimum temperature reached');
+  }
+  this.temperature--;
 };
 
-Thermostat.prototype.maxTemperature = function(){
-    if (this.powerSave === true) {
-    return this.temperature === this.MAX_LIMIT_PS
-    };
-    return this.temperature === this.MAX_LIMIT_PSOFF
-  };
+Thermostat.prototype.powerSaveOff = function() {
+  this.powerSave = false;
+};
 
-Thermostat.prototype.reset = function(){
+Thermostat.prototype.powerSaveOn = function() {
+  this.powerSave = true;
+};
+
+Thermostat.prototype.reset = function() {
   this.temperature = 20;
 };
 
-Thermostat.prototype.energyUsage = function(){
-  if (this.temperature < this.MEDIUM_USAGE ) {
-    return this.usage = 'low-usage';
+Thermostat.prototype.energy  = function() {
+  if (this.temperature <= 18){
+    return "Green";
   }
-  if (this.temperature >= this.MEDIUM_USAGE && this.temperature <= this.MAX_LIMIT_PS) {
-    return this.usage = 'medium-usage';
+  else if (this.temperature > 18 && this.temperature < 25 ) {
+    return "Yellow";
   }
-  return this.usage = 'high-usage';
-}
-
-Thermostat.prototype.colour = function() {
-  if (this.usage == 'low-usage') {
-    return 'Green'
+  else if (this. temperature >= 25) {
+    return "Red";
   }
-  if (this.usage == 'medium-usage') {
-    return 'Orange'
-  }
-  return 'Red';
 };

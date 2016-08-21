@@ -1,0 +1,54 @@
+body {
+  font-family: "Digital", Verdana, Tahoma;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+@font-face {
+    font-family: "Digital";
+    src: url(digital-7.ttf) format("truetype");
+}
+
+input[type=submit] {
+    background:#ccc;
+    font-family: "Digital", Verdana, Tahoma;
+}
+
+input[type=text] {
+    font-family: "Digital", Verdana, Tahoma;
+}
+
+.button {
+    font-family: "Digital", Verdana, Tahoma;
+}
+
+.buttons {
+  margin-bottom: 20px;
+}
+
+.powerbuttons {
+  margin-top: 20px;
+}
+
+.Green {
+  color: green;
+}
+
+.Yellow {
+  color: orange;
+}
+
+.Red {
+  color: red;
+}
+
+header {
+  background-color: black;
+  color: white;
+}
+
+#temperature {
+  font-size: 60px;
+  font-family: "Digital", Verdana, Tahoma;
+}
